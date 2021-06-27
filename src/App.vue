@@ -1,22 +1,49 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>red</h2>
+    <todolist></todolist>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
+  data() {
+    return {
+     
+    }
+  },
   components: {
-    HelloWorld
-  }
+    todolist: () => import('./components/todoList/index.vue')
+  },
+  beforeCreate() {
+    console.log('beforeCreate', this, this.$el, this.PI)
+  },
+  created() {
+    console.log('created', this, this.$el, this.PI)
+  },
+  beforeMount() {
+    console.log('beforeMount', this, this.$el, this.PI)
+  },
+  mounted() {
+    console.log('mounted', this, this.$el, this.PI)
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate', this, this.$el, this.PI)
+  },
+  updated() {
+    console.log('updated', this, this.$el, this.PI)
+  },
+  beforeDestroy() {
+    console.log('beforeDestroy', this, this.$el, this.PI)
+  },
+  destroyed() {
+    console.log('destroyed', this, this.$el, this.PI)
+  },
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +51,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h2{ 
+  color: red;
 }
 </style>
