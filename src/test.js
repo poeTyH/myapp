@@ -1,1 +1,5 @@
-console.log('dev')
+function test() {
+    console.log('test')
+}
+
+test();
